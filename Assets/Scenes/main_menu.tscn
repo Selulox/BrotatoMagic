@@ -1,0 +1,207 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf4yabqvkjbpx"]
+
+[ext_resource type="Script" uid="uid://bs8hjkfc5tvv8" path="res://Assets/Scripts/main_menu.gd" id="1_cbhea"]
+[ext_resource type="Texture2D" uid="uid://de4j7g1wnm35q" path="res://Assets/Sprites/main_menu.png" id="1_x6jn2"]
+[ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="2_fsbqx"]
+
+[node name="Main_menu" type="Node2D"]
+script = ExtResource("1_cbhea")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_x6jn2")
+
+[node name="Main_Menu_UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Magis" type="Label" parent="Main_Menu_UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 423.0
+offset_top = 91.0
+offset_right = 686.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.803998, 0.685495, 0.16727, 1)
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 100
+text = "Magis"
+
+[node name="Main_Menu_Buttons" type="VBoxContainer" parent="Main_Menu_UI"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 242.0
+offset_right = 708.0
+offset_bottom = 490.0
+
+[node name="Play" type="Button" parent="Main_Menu_UI/Main_Menu_Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 75
+text = "Play"
+flat = true
+
+[node name="Options" type="Button" parent="Main_Menu_UI/Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 75
+text = "Options"
+flat = true
+
+[node name="About" type="Button" parent="Main_Menu_UI/Main_Menu_Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 75
+text = "About
+"
+flat = true
+
+[node name="Exit_Game" type="Button" parent="Main_Menu_UI/Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 75
+text = "Exit"
+flat = true
+
+[node name="OptionsScreen" type="ColorRect" parent="Main_Menu_UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1132.0
+offset_bottom = 628.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="title_options" type="Label" parent="Main_Menu_UI/OptionsScreen"]
+layout_mode = 0
+offset_right = 169.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="Sound_option" type="HBoxContainer" parent="Main_Menu_UI/OptionsScreen"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 100.0
+offset_right = 107.0
+offset_bottom = 140.0
+
+[node name="sound" type="Label" parent="Main_Menu_UI/OptionsScreen/Sound_option"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 35
+text = "Sound"
+
+[node name="ProgressBar" type="ProgressBar" parent="Main_Menu_UI/OptionsScreen/Sound_option/sound"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 3.0
+offset_right = 543.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_fsbqx")
+value = 100.0
+
+[node name="Fullscreen_option" type="HBoxContainer" parent="Main_Menu_UI/OptionsScreen"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 153.0
+offset_right = 228.0
+offset_bottom = 193.0
+
+[node name="Fullscreen" type="Label" parent="Main_Menu_UI/OptionsScreen/Fullscreen_option"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 36
+text = "Fullscreen"
+
+[node name="on_off" type="CheckButton" parent="Main_Menu_UI/OptionsScreen/Fullscreen_option"]
+layout_mode = 2
+
+[node name="Option_exit" type="Button" parent="Main_Menu_UI/OptionsScreen"]
+layout_mode = 0
+offset_left = 1090.0
+offset_top = 11.0
+offset_right = 1129.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 50
+text = "X"
+flat = true
+
+[node name="aboutscreen" type="ColorRect" parent="Main_Menu_UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="title_about" type="Label" parent="Main_Menu_UI/aboutscreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_right = 23.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 75
+text = "About"
+
+[node name="description" type="Label" parent="Main_Menu_UI/aboutscreen"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 145.0
+offset_right = 1080.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 50
+text = "This is a roguelike game with magical skills
+
+
+
+Made by Selulox"
+
+[node name="exit_about" type="Button" parent="Main_Menu_UI/aboutscreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 21.0
+offset_right = 1118.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("2_fsbqx")
+theme_override_font_sizes/font_size = 50
+text = "X"
+flat = true
+
+[connection signal="pressed" from="Main_Menu_UI/Main_Menu_Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main_Menu_UI/Main_Menu_Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Main_Menu_UI/Main_Menu_Buttons/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="Main_Menu_UI/Main_Menu_Buttons/Exit_Game" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="Main_Menu_UI/OptionsScreen/Option_exit" to="." method="_on_option_exit_pressed"]
+[connection signal="pressed" from="Main_Menu_UI/aboutscreen/exit_about" to="." method="_on_exit_about_pressed"]

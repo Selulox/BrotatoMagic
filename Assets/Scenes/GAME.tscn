@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://u7o5xg1r857e"]
 
-[ext_resource type="PackedScene" uid="uid://bqxqwgyntd1sv" path="res://Scenes/background.tscn" id="1_4g6ul"]
-[ext_resource type="PackedScene" uid="uid://bnvybgkcvf330" path="res://Scenes/player.tscn" id="1_8s267"]
-[ext_resource type="Script" uid="uid://de75gpy3i0spv" path="res://Scripts/game.gd" id="1_pidfq"]
-[ext_resource type="Texture2D" uid="uid://1lepkkiqv817" path="res://Sprites/restart.png" id="4_pidfq"]
+[ext_resource type="PackedScene" uid="uid://bqxqwgyntd1sv" path="res://Assets/Scenes/background.tscn" id="1_4g6ul"]
+[ext_resource type="PackedScene" uid="uid://bnvybgkcvf330" path="res://Assets/Scenes/player.tscn" id="1_8s267"]
+[ext_resource type="Script" uid="uid://de75gpy3i0spv" path="res://Assets/Scripts/game.gd" id="1_pidfq"]
+[ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="4_0whnu"]
 
 [sub_resource type="Curve2D" id="Curve2D_4g6ul"]
 _data = {
@@ -47,30 +47,37 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.490196)
 
-[node name="Label" type="Label" parent="GameOverScreen/ColorRect"]
+[node name="GameOver" type="Label" parent="GameOverScreen/ColorRect"]
 layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 211.0
+offset_right = 133.0
+offset_bottom = 259.0
+grow_horizontal = 2
+scale = Vector2(1.0751, 1.19042)
+theme_override_fonts/font = ExtResource("4_0whnu")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="Reset" type="Button" parent="GameOverScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -11.5
-offset_right = 46.0
-offset_bottom = 11.5
+offset_left = -57.5
+offset_top = -21.0
+offset_right = 57.5
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "GAME OVER"
-
-[node name="Button" type="Button" parent="GameOverScreen"]
-offset_left = 511.0
-offset_top = 351.0
-offset_right = 775.0
-offset_bottom = 487.0
-scale = Vector2(0.474804, 0.349187)
-icon = ExtResource("4_pidfq")
+theme_override_fonts/font = ExtResource("4_0whnu")
+theme_override_font_sizes/font_size = 35
+text = "RESET"
 
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="GameOverScreen/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GameOverScreen/Reset" to="." method="_on_reset_pressed"]
