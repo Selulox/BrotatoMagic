@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duc75twpg70kl"
-path="res://.godot/imported/final boss wall.png-ee9629ea65a61e32eff8bd06d4a5f1f7.ctex"
+path="res://.godot/imported/final boss wall.png-23e3e4504354cc586480d644f56126ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/final boss wall.png"
-dest_files=["res://.godot/imported/final boss wall.png-ee9629ea65a61e32eff8bd06d4a5f1f7.ctex"]
+source_file="res://Assets/Sprites/final boss wall.png"
+dest_files=["res://.godot/imported/final boss wall.png-23e3e4504354cc586480d644f56126ba.ctex"]
 
 [params]
 

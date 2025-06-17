@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://87vhpjs7wt2a"
-path="res://.godot/imported/Jump Anticipation (36x36).png-9c9e368e07a926b7bb9d6a57ef6ba122.ctex"
+path="res://.godot/imported/Jump Anticipation (36x36).png-a19666958a2673aa7e554d7969bb9cd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Duck/Jump Anticipation (36x36).png"
-dest_files=["res://.godot/imported/Jump Anticipation (36x36).png-9c9e368e07a926b7bb9d6a57ef6ba122.ctex"]
+source_file="res://Assets/Sprites/Duck/Jump Anticipation (36x36).png"
+dest_files=["res://.godot/imported/Jump Anticipation (36x36).png-a19666958a2673aa7e554d7969bb9cd0.ctex"]
 
 [params]
 
