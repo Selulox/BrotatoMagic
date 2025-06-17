@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://by7usr6iqhpir"]
+
+[ext_resource type="Texture2D" uid="uid://xs00aj4wbk1w" path="res://Sprites/healthbar.png" id="1_1v5t1"]
+[ext_resource type="Texture2D" uid="uid://yu5b8qdvbmp3" path="res://Sprites/healthbar-export.png" id="2_1v5t1"]
+
+[node name="HealthBar" type="TextureProgressBar"]
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(0.811026, 0.80896)
+value = 100.0
+texture_over = ExtResource("1_1v5t1")
+texture_progress = ExtResource("2_1v5t1")
+texture_progress_offset = Vector2(14, 31)

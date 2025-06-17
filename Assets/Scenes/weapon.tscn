@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq0guehwcrsai"]
+
+[ext_resource type="Texture2D" uid="uid://cc6slerxwfnnk" path="res://Sprites/Tome.png" id="1_er6cq"]
+[ext_resource type="Script" uid="uid://bs5muv4kpg44i" path="res://Scripts/weapon.gd" id="1_qv81b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qv81b"]
+radius = 120.0
+
+[node name="Tome" type="Area2D"]
+scale = Vector2(1.25, 1.25)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_qv81b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qv81b")
+
+[node name="Pivot" type="Marker2D" parent="."]
+
+[node name="tome" type="Sprite2D" parent="Pivot"]
+position = Vector2(13, 0)
+scale = Vector2(0.421875, 0.421875)
+texture = ExtResource("1_er6cq")
+
+[node name="shoot" type="Marker2D" parent="Pivot/tome"]
+unique_name_in_owner = true
+position = Vector2(9.48148, -7.11111)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
