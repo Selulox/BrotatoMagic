@@ -219,5 +219,3 @@ offset_left = -24.6667
 offset_top = -46.6667
 offset_right = 39.3333
 offset_bottom = 17.3333
-
-[node name="Camera2D" type="Camera2D" parent="."]

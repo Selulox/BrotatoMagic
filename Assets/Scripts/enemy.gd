@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var points_for_kill = 100
 var health = 2
 
 @onready var player = get_node('/root/game/player')
@@ -17,4 +17,6 @@ func take_damage():
 	%duck.play_hurt()
 	
 	if health == 0:
+		Game.current_score += points_for_kill
 		queue_free()
+		
