@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc844gw05agvr"]
+
+[ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="1_vd4p1"]
+[ext_resource type="Script" uid="uid://dpp5njfdf88uu" path="res://Assets/Scenes/currentscore_label.gd" id="2_1p44n"]
+
+[node name="score keep" type="StaticBody2D"]
+
+[node name="scorelabel" type="RichTextLabel" parent="."]
+offset_right = 344.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("1_vd4p1")
+theme_override_font_sizes/normal_font_size = 35
+text = "Score: 999999"
+script = ExtResource("2_1p44n")

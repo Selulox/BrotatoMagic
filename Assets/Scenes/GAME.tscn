@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnvybgkcvf330" path="res://Assets/Scenes/player.tscn" id="1_8s267"]
 [ext_resource type="Script" uid="uid://de75gpy3i0spv" path="res://Assets/Scripts/game.gd" id="1_pidfq"]
 [ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="4_0whnu"]
-[ext_resource type="Script" uid="uid://dpp5njfdf88uu" path="res://Assets/Scenes/currentscore_label.gd" id="5_jiewh"]
+[ext_resource type="PackedScene" uid="uid://dc844gw05agvr" path="res://Assets/Scenes/score_keep.tscn" id="5_jiewh"]
 
 [sub_resource type="Curve2D" id="Curve2D_4g6ul"]
 _data = {
@@ -79,21 +79,8 @@ theme_override_fonts/font = ExtResource("4_0whnu")
 theme_override_font_sizes/font_size = 35
 text = "RESET"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="currentscoreLabel" type="RichTextLabel" parent="StaticBody2D"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 489.0
-offset_top = 3.0
-offset_right = 754.0
-offset_bottom = 40.0
-grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("4_0whnu")
-theme_override_font_sizes/normal_font_size = 35
-text = "Score : 99999d"
-script = ExtResource("5_jiewh")
+[node name="score keep" parent="." instance=ExtResource("5_jiewh")]
+position = Vector2(491, 19)
 
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
