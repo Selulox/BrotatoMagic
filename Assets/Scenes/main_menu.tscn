@@ -33,7 +33,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.803998, 0.685495, 0.16727, 1)
 theme_override_fonts/font = ExtResource("2_fsbqx")
 theme_override_font_sizes/font_size = 100
-text = "Magis"
+text = "Pinkus"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="Main_Menu_UI"]
 layout_mode = 0
@@ -181,7 +181,7 @@ offset_right = 1080.0
 offset_bottom = 193.0
 theme_override_fonts/font = ExtResource("2_fsbqx")
 theme_override_font_sizes/font_size = 50
-text = "This is a roguelike game with magical skills
+text = "This is a roguelike game with magic
 
 
 

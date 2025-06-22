@@ -24,6 +24,7 @@ func update_score():
 func _on_player_health_depleted() -> void:
 	%GameOverScreen.visible = true
 	%ScoreLabel.visible = false
-	update_score()sd
+	
 func _on_reset_pressed():
+	update_score()
 	get_tree().reload_current_scene()
