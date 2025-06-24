@@ -11,7 +11,10 @@ func _on_timer_timeout() -> void:
 
 func _on_player_health_depleted() -> void:
 	%GameOverScreen.visible = true
-
+	%player.visible = false  
+	var reload_time = preload("res://Assets/Scenes/respawn.tscn").instantiate()
+	%GameOverScreen.add_child(reload_time)
+	
 func update_score():
 	Global.current_score = Global.previus_score 
 	if Global.current_score > Global.high_score:
@@ -21,3 +24,4 @@ func update_score():
 func _on_reset_pressed():
 	update_score()
 	get_tree().reload_current_scene()
+	
