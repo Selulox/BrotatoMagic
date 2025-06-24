@@ -1,6 +1,5 @@
 extends Area2D
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
@@ -16,7 +15,6 @@ func shoot():
 	new_bullet.global_position = %shoot.global_position
 	new_bullet.global_rotation = %shoot.global_rotation
 	%shoot.add_child(new_bullet)
-
 
 func _on_timer_timeout():
 	shoot()

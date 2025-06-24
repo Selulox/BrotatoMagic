@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*res://Assets/Scripts/game.gd"
+Global="*res://Assets/Scripts/global.gd"
 
 [input]
 

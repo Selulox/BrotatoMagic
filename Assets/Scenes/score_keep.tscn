@@ -1,14 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc844gw05agvr"]
+[gd_scene load_steps=4 format=3 uid="uid://dc844gw05agvr"]
 
 [ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="1_vd4p1"]
-[ext_resource type="Script" uid="uid://dpp5njfdf88uu" path="res://Assets/Scenes/currentscore_label.gd" id="2_1p44n"]
+[ext_resource type="Script" uid="uid://dpp5njfdf88uu" path="res://Assets/Scripts/currentscore_label.gd" id="2_1p44n"]
+[ext_resource type="Script" uid="uid://bw8ury8nihde2" path="res://Assets/Scripts/highscorelabel.gd" id="3_1p44n"]
 
-[node name="score keep" type="StaticBody2D"]
+[node name="score keep" type="CanvasLayer"]
 
 [node name="scorelabel" type="RichTextLabel" parent="."]
-offset_right = 344.0
-offset_bottom = 40.0
+offset_left = 379.0
+offset_top = 29.0
+offset_right = 723.0
+offset_bottom = 69.0
 theme_override_fonts/normal_font = ExtResource("1_vd4p1")
 theme_override_font_sizes/normal_font_size = 35
 text = "Score: 999999"
 script = ExtResource("2_1p44n")
+
+[node name="highscorelabel" type="RichTextLabel" parent="."]
+offset_left = 316.0
+offset_top = -1.0
+offset_right = 648.0
+offset_bottom = 62.0
+theme_override_fonts/normal_font = ExtResource("1_vd4p1")
+theme_override_font_sizes/normal_font_size = 35
+text = "HighScore: 999999"
+script = ExtResource("3_1p44n")
