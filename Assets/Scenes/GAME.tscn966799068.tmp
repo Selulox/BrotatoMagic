@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://u7o5xg1r857e"]
+[gd_scene load_steps=7 format=3 uid="uid://u7o5xg1r857e"]
 
 [ext_resource type="PackedScene" uid="uid://bqxqwgyntd1sv" path="res://Assets/Scenes/background.tscn" id="1_4g6ul"]
 [ext_resource type="PackedScene" uid="uid://bnvybgkcvf330" path="res://Assets/Scenes/player.tscn" id="1_8s267"]
 [ext_resource type="Script" uid="uid://de75gpy3i0spv" path="res://Assets/Scripts/game.gd" id="1_pidfq"]
 [ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="4_0whnu"]
-[ext_resource type="Texture2D" uid="uid://4g2mu4cqueq7" path="res://Assets/Sprites/enemy hp bar-empty.png" id="5_dcnkl"]
 [ext_resource type="PackedScene" uid="uid://dc844gw05agvr" path="res://Assets/Scenes/score_keep.tscn" id="5_jiewh"]
-[ext_resource type="Texture2D" uid="uid://cycd6t7uqqui6" path="res://Assets/Sprites/enemey hp bar - filling.png" id="6_dvq0e"]
 
 [sub_resource type="Curve2D" id="Curve2D_4g6ul"]
 _data = {
@@ -66,23 +64,6 @@ theme_override_fonts/font = ExtResource("4_0whnu")
 theme_override_font_sizes/font_size = 50
 text = "GAME OVER"
 
-[node name="Respawn_time" type="Timer" parent="GameOverScreen"]
-autostart = true
-
-[node name="respawn_time_bar" type="TextureProgressBar" parent="GameOverScreen/Respawn_time"]
-unique_name_in_owner = true
-visible = false
-offset_left = 422.0
-offset_top = 337.0
-offset_right = 486.0
-offset_bottom = 401.0
-scale = Vector2(4.97965, 2.75756)
-max_value = 10.0
-value = 10.0
-texture_over = ExtResource("5_dcnkl")
-texture_progress = ExtResource("6_dvq0e")
-texture_progress_offset = Vector2(8, 24)
-
 [node name="Reset" type="Button" parent="GameOverScreen"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -105,5 +86,4 @@ transform = Transform2D(1, 0, 0, 1, 80, 0)
 
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="GameOverScreen/Respawn_time" to="." method="_on_respawn_time_timeout"]
 [connection signal="pressed" from="GameOverScreen/Reset" to="." method="_on_reset_pressed"]

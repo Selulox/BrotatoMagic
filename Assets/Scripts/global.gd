@@ -1,6 +1,7 @@
 extends Node
 
-var high_score = 0 
+var high_score : int
 var current_score : int
-var previus_score : int
 var reload_time
+var player_xp : int
+var xp_drop : int
