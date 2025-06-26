@@ -130,6 +130,7 @@ text = "RESET"
 autostart = true
 
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
+[connection signal="value_changed" from="Label_Keep/Xp_Bar" to="." method="_on_xp_bar_value_changed"]
 [connection signal="timeout" from="GameOverScreen/Respawn_time" to="." method="_on_respawn_time_timeout"]
 [connection signal="pressed" from="GameOverScreen/Reset" to="." method="_on_reset_pressed"]
 [connection signal="timeout" from="Enemy_Spawn_Timer" to="." method="_on_enemy_spawn_timer_timeout"]

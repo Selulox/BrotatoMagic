@@ -4,19 +4,15 @@ var new_enemy
 var respawn_time = 10.0
 
 
-
-
-
-
 func spawn_enemies():
 	new_enemy = preload("res://Assets/Scenes/Enemy.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	new_enemy.global_position = %PathFollow2D.global_position
 	add_child(new_enemy)
 
-func _on_timer_timeout() -> void:
+func _on_enemy_spawn_timer_timeout() -> void:
 	spawn_enemies()
-	
+
 func _on_respawn_time_timeout() -> void:
 	%respawn_time_bar.visible = false
 	const time = 1.0
