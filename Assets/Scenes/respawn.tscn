@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://cycd6t7uqqui6" path="res://Assets/Sprites/enemey hp bar - filling.png" id="2_woobw"]
 
 [node name="respawn_time" type="Timer"]
-wait_time = 10.0
 autostart = true
 script = ExtResource("1_woobw")
 
 [node name="respawn_time_bar" type="TextureProgressBar" parent="."]
-offset_left = 334.0
+unique_name_in_owner = true
+offset_left = 325.0
 offset_top = 358.0
-offset_right = 398.0
+offset_right = 389.0
 offset_bottom = 422.0
 scale = Vector2(7.80214, 5.50784)
 max_value = 10.0
@@ -20,3 +20,5 @@ value = 10.0
 texture_over = ExtResource("1_7dwhl")
 texture_progress = ExtResource("2_woobw")
 texture_progress_offset = Vector2(8, 24)
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]
