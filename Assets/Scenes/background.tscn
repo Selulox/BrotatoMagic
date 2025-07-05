@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqxqwgyntd1sv"]
 
-[ext_resource type="Texture2D" uid="uid://bcpxnyxhfblvr" path="res://Assets/Sprites/wallbig.png" id="1_1sorp"]
+[ext_resource type="Texture2D" uid="uid://bcpxnyxhfblvr" path="res://Assets/Sprites/backgrounds/wallbig.png" id="1_1sorp"]
 
 [node name="Background" type="Sprite2D"]
 position = Vector2(576, 324)

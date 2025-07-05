@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4g2mu4cqueq7"
-path="res://.godot/imported/enemy hp bar-empty.png-426ce8c1124ae75b1080dd59df24041f.ctex"
+uid="uid://bcpxnyxhfblvr"
+path="res://.godot/imported/wallbig.png-d0412face17e895eacfc73a6f7ebebb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/enemy hp bar-empty.png"
-dest_files=["res://.godot/imported/enemy hp bar-empty.png-426ce8c1124ae75b1080dd59df24041f.ctex"]
+source_file="res://Assets/Sprites/backgrounds/wallbig.png"
+dest_files=["res://.godot/imported/wallbig.png-d0412face17e895eacfc73a6f7ebebb2.ctex"]
 
 [params]
 

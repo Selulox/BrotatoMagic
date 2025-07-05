@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc75twpg70kl"
-path="res://.godot/imported/final boss wall.png-23e3e4504354cc586480d644f56126ba.ctex"
+uid="uid://c8coqtgh42mgk"
+path="res://.godot/imported/healthbar-filling.png-a87717f53f362420c88604b47aae9498.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/final boss wall.png"
-dest_files=["res://.godot/imported/final boss wall.png-23e3e4504354cc586480d644f56126ba.ctex"]
+source_file="res://Assets/Sprites/ui/healthbar-filling.png"
+dest_files=["res://.godot/imported/healthbar-filling.png-a87717f53f362420c88604b47aae9498.ctex"]
 
 [params]
 

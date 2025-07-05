@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://depbx8c80mv8f"
-path="res://.godot/imported/sword.png-592de964f347a2f78f681639f77bd886.ctex"
+uid="uid://4g2mu4cqueq7"
+path="res://.godot/imported/enemy hp bar-empty.png-98e0570bb0425b158983aa56fdaf968b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/sword.png"
-dest_files=["res://.godot/imported/sword.png-592de964f347a2f78f681639f77bd886.ctex"]
+source_file="res://Assets/Sprites/ui/enemy hp bar-empty.png"
+dest_files=["res://.godot/imported/enemy hp bar-empty.png-98e0570bb0425b158983aa56fdaf968b.ctex"]
 
 [params]
 

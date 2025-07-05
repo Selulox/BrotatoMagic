@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf4yabqvkjbpx"]
 
 [ext_resource type="Script" uid="uid://bs8hjkfc5tvv8" path="res://Assets/Scripts/main_menu.gd" id="1_cbhea"]
-[ext_resource type="Texture2D" uid="uid://de4j7g1wnm35q" path="res://Assets/Sprites/main_menu.png" id="1_x6jn2"]
+[ext_resource type="Texture2D" uid="uid://de4j7g1wnm35q" path="res://Assets/Sprites/backgrounds/main_menu.png" id="1_x6jn2"]
 [ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="2_fsbqx"]
 
 [node name="Main_menu" type="Node2D"]
