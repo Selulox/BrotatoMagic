@@ -5,3 +5,4 @@ func _process(delta: float) -> void:
 	#Level_Up
 	if %Xp_Bar.value == %Xp_Bar.max_value:
 		%Xp_Bar.value = 0
+		Global.player_level += 1
