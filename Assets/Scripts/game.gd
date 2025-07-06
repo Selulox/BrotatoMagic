@@ -3,7 +3,6 @@ extends Node2D
 var new_enemy
 var respawn_time = 10.0
 
-
 func spawn_enemies():
 	new_enemy = preload("res://Assets/Scenes/Enemy.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
@@ -22,6 +21,7 @@ func _on_respawn_time_timeout() -> void:
 			respawn_time -= time
 			%respawn_time_bar.value = respawn_time
 			if respawn_time <= 0.0:
+				Global.player_xp = 0.0
 				update_score()
 				get_tree().reload_current_scene()
 	else:
@@ -30,13 +30,19 @@ func _on_respawn_time_timeout() -> void:
 func _on_player_health_depleted() -> void:
 	%GameOverScreen.visible = true
 	%player.visible = false
-	
+
 func update_score(): 
 	if Global.current_score > Global.high_score:
 		Global.high_score = Global.current_score
 	Global.current_score = 0
 
 func _on_reset_pressed():
+	Global.player_xp = 0.0
 	update_score()
 	get_tree().reload_current_scene()
-	
+
+func _on_xp_bar_level_up() -> void:
+	%Player_level_up_screen.visible = true
+
+func _on_slot_1_button_pressed() -> void:
+	%Player_level_up_screen.visible = false

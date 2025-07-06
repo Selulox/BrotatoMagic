@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://u7o5xg1r857e"]
+[gd_scene load_steps=11 format=3 uid="uid://u7o5xg1r857e"]
 
 [ext_resource type="PackedScene" uid="uid://bqxqwgyntd1sv" path="res://Assets/Scenes/background.tscn" id="1_4g6ul"]
 [ext_resource type="PackedScene" uid="uid://bnvybgkcvf330" path="res://Assets/Scenes/player.tscn" id="1_8s267"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cycd6t7uqqui6" path="res://Assets/Sprites/ui/enemey hp bar - filling.png" id="6_dvq0e"]
 [ext_resource type="Script" uid="uid://chpbvnwpc3ux1" path="res://Assets/Scripts/xp_bar.gd" id="6_m4yx2"]
 [ext_resource type="Script" uid="uid://dpp5njfdf88uu" path="res://Assets/Scripts/currentscore_label.gd" id="7_dvq0e"]
-[ext_resource type="Texture2D" uid="uid://dsj64eqppq2qm" path="res://Assets/Sprites/ui/inventory.png" id="8_7ibyi"]
 [ext_resource type="Script" uid="uid://bw8ury8nihde2" path="res://Assets/Scripts/highscorelabel.gd" id="8_m4yx2"]
 
 [sub_resource type="Curve2D" id="Curve2D_4g6ul"]
@@ -66,48 +65,6 @@ layer = -128
 
 [node name="Background" parent="Background" instance=ExtResource("1_4g6ul")]
 z_index = -1
-
-[node name="Player_level_up_screen" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-visible = false
-
-[node name="Slot_1_button3" type="Button" parent="Player_level_up_screen"]
-offset_left = 674.0
-offset_top = 248.0
-offset_right = 745.0
-offset_bottom = 373.0
-
-[node name="Inventory" type="Sprite2D" parent="Player_level_up_screen/Slot_1_button3"]
-position = Vector2(36, 63)
-scale = Vector2(1.09375, 1.9375)
-texture = ExtResource("8_7ibyi")
-
-[node name="Slot_1_button2" type="Button" parent="Player_level_up_screen"]
-offset_left = 556.0
-offset_top = 250.0
-offset_right = 627.0
-offset_bottom = 375.0
-
-[node name="Inventory" type="Sprite2D" parent="Player_level_up_screen/Slot_1_button2"]
-position = Vector2(36, 63)
-scale = Vector2(1.09375, 1.9375)
-texture = ExtResource("8_7ibyi")
-
-[node name="Slot_1_button" type="Button" parent="Player_level_up_screen"]
-offset_left = 444.0
-offset_top = 250.0
-offset_right = 515.0
-offset_bottom = 375.0
-
-[node name="Inventory" type="Sprite2D" parent="Player_level_up_screen/Slot_1_button"]
-position = Vector2(36, 63)
-scale = Vector2(1.09375, 1.9375)
-texture = ExtResource("8_7ibyi")
-
-[node name="ColorRect" type="ColorRect" parent="Player_level_up_screen"]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 0.784314)
 
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -173,8 +130,7 @@ text = "RESET"
 autostart = true
 
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
-[connection signal="level_up" from="Label_Keep/Xp_Bar" to="." method="_on_xp_bar_level_up"]
-[connection signal="pressed" from="Player_level_up_screen/Slot_1_button" to="." method="_on_slot_1_button_pressed"]
+[connection signal="level_up" from="Label_Keep/Xp_Bar" to="player" method="_on_xp_bar_level_up"]
 [connection signal="timeout" from="GameOverScreen/Respawn_time" to="." method="_on_respawn_time_timeout"]
 [connection signal="pressed" from="GameOverScreen/Reset" to="." method="_on_reset_pressed"]
 [connection signal="timeout" from="Enemy_Spawn_Timer" to="." method="_on_enemy_spawn_timer_timeout"]

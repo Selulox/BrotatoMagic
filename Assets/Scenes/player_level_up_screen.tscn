@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://ctq22dvul64bk"]
-
-[node name="Player_Level_Up_Screen" type="CanvasLayer"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(1, 1, 1, 0)
