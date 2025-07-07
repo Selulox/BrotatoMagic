@@ -47,10 +47,9 @@ func _on_xp_bar_level_up():
 	%Player_level_up_screen.visible = true
 	get_tree().paused = true
 
-func _on_slot_1_button_pressed():
+func _on_slot_1_button_pressed() -> void:
 	%Player_level_up_screen.visible = false
 	get_tree().paused = false
-	
 
 func _on_slot_1_button_2_pressed() -> void:
 	%Player_level_up_screen.visible = false
