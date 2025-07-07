@@ -34,6 +34,7 @@ unique_name_in_owner = true
 position = Vector2(-61, -63)
 
 [node name="Label_Keep" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="Score_Label" type="RichTextLabel" parent="Label_Keep"]
 offset_left = 481.0
@@ -69,48 +70,38 @@ z_index = -1
 
 [node name="Player_level_up_screen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Player_level_up_screen"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.784314)
 
 [node name="Slot_1_button3" type="Button" parent="Player_level_up_screen"]
 offset_left = 674.0
 offset_top = 248.0
 offset_right = 745.0
 offset_bottom = 373.0
-
-[node name="Inventory" type="Sprite2D" parent="Player_level_up_screen/Slot_1_button3"]
-position = Vector2(36, 63)
-scale = Vector2(1.09375, 1.9375)
-texture = ExtResource("8_7ibyi")
+icon = ExtResource("8_7ibyi")
 
 [node name="Slot_1_button2" type="Button" parent="Player_level_up_screen"]
 offset_left = 556.0
 offset_top = 250.0
 offset_right = 627.0
 offset_bottom = 375.0
-
-[node name="Inventory" type="Sprite2D" parent="Player_level_up_screen/Slot_1_button2"]
-position = Vector2(36, 63)
-scale = Vector2(1.09375, 1.9375)
-texture = ExtResource("8_7ibyi")
+icon = ExtResource("8_7ibyi")
 
 [node name="Slot_1_button" type="Button" parent="Player_level_up_screen"]
 offset_left = 444.0
 offset_top = 250.0
 offset_right = 515.0
 offset_bottom = 375.0
-
-[node name="Inventory" type="Sprite2D" parent="Player_level_up_screen/Slot_1_button"]
-position = Vector2(36, 63)
-scale = Vector2(1.09375, 1.9375)
-texture = ExtResource("8_7ibyi")
-
-[node name="ColorRect" type="ColorRect" parent="Player_level_up_screen"]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 0.784314)
+icon = ExtResource("8_7ibyi")
 
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOverScreen"]
@@ -174,6 +165,8 @@ autostart = true
 
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="level_up" from="Label_Keep/Xp_Bar" to="." method="_on_xp_bar_level_up"]
+[connection signal="pressed" from="Player_level_up_screen/Slot_1_button3" to="." method="_on_slot_1_button_3_pressed"]
+[connection signal="pressed" from="Player_level_up_screen/Slot_1_button2" to="." method="_on_slot_1_button_2_pressed"]
 [connection signal="pressed" from="Player_level_up_screen/Slot_1_button" to="." method="_on_slot_1_button_pressed"]
 [connection signal="timeout" from="GameOverScreen/Respawn_time" to="." method="_on_respawn_time_timeout"]
 [connection signal="pressed" from="GameOverScreen/Reset" to="." method="_on_reset_pressed"]

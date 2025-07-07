@@ -23,13 +23,14 @@ func _on_respawn_time_timeout() -> void:
 			if respawn_time <= 0.0:
 				Global.player_xp = 0.0
 				update_score()
+				get_tree().paused = false
 				get_tree().reload_current_scene()
 	else:
 		return
 
 func _on_player_health_depleted() -> void:
 	%GameOverScreen.visible = true
-	%player.visible = false
+	get_tree().paused = true
 
 func update_score(): 
 	if Global.current_score > Global.high_score:
@@ -39,10 +40,22 @@ func update_score():
 func _on_reset_pressed():
 	Global.player_xp = 0.0
 	update_score()
+	get_tree().paused = false
 	get_tree().reload_current_scene()
 
-func _on_xp_bar_level_up() -> void:
+func _on_xp_bar_level_up():
 	%Player_level_up_screen.visible = true
+	get_tree().paused = true
 
-func _on_slot_1_button_pressed() -> void:
+func _on_slot_1_button_pressed():
 	%Player_level_up_screen.visible = false
+	get_tree().paused = false
+	
+
+func _on_slot_1_button_2_pressed() -> void:
+	%Player_level_up_screen.visible = false
+	get_tree().paused = false
+
+func _on_slot_1_button_3_pressed() -> void:
+	%Player_level_up_screen.visible = false
+	get_tree().paused = false
