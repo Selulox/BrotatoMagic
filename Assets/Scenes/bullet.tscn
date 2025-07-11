@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://h4neu8cogxgu"]
+[gd_scene load_steps=5 format=3 uid="uid://h4neu8cogxgu"]
 
 [ext_resource type="Script" uid="uid://c7jqddx3hxtbn" path="res://Assets/Scripts/bullet.gd" id="1_oduel"]
 [ext_resource type="Texture2D" uid="uid://dfvxowjoy4ojr" path="res://Assets/Sprites/items/projectile.png" id="1_xjght"]
+[ext_resource type="AudioStream" uid="uid://qqlkt3mrdwtv" path="res://Assets/audio/sound_effect/shoot1.wav" id="3_7gn42"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mw4s"]
 radius = 4.0
@@ -18,5 +19,9 @@ texture = ExtResource("1_xjght")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4mw4s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7gn42")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

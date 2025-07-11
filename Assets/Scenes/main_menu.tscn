@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf4yabqvkjbpx"]
+[gd_scene load_steps=5 format=3 uid="uid://cf4yabqvkjbpx"]
 
 [ext_resource type="Script" uid="uid://bs8hjkfc5tvv8" path="res://Assets/Scripts/main_menu.gd" id="1_cbhea"]
 [ext_resource type="Texture2D" uid="uid://de4j7g1wnm35q" path="res://Assets/Sprites/backgrounds/main_menu.png" id="1_x6jn2"]
 [ext_resource type="FontFile" uid="uid://cltfy1gruyoc1" path="res://Assets/alagard.ttf" id="2_fsbqx"]
+[ext_resource type="AudioStream" uid="uid://dnyimfvo8a1en" path="res://Assets/audio/music/Path to Lake Land.ogg" id="4_tanm1"]
 
 [node name="Main_menu" type="Node2D"]
 script = ExtResource("1_cbhea")
@@ -111,13 +112,12 @@ theme_override_fonts/font = ExtResource("2_fsbqx")
 theme_override_font_sizes/font_size = 35
 text = "Sound"
 
-[node name="ProgressBar" type="ProgressBar" parent="Main_Menu_UI/OptionsScreen/Sound_option/sound"]
+[node name="HSlider" type="HSlider" parent="Main_Menu_UI/OptionsScreen/Sound_option/sound"]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 3.0
-offset_right = 543.0
-offset_bottom = 30.0
-theme_override_fonts/font = ExtResource("2_fsbqx")
+offset_left = 124.0
+offset_top = 9.0
+offset_right = 539.0
+offset_bottom = 25.0
 value = 100.0
 
 [node name="Fullscreen_option" type="HBoxContainer" parent="Main_Menu_UI/OptionsScreen"]
@@ -198,6 +198,10 @@ theme_override_fonts/font = ExtResource("2_fsbqx")
 theme_override_font_sizes/font_size = 50
 text = "X"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tanm1")
+autoplay = true
 
 [connection signal="pressed" from="Main_Menu_UI/Main_Menu_Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main_Menu_UI/Main_Menu_Buttons/Options" to="." method="_on_options_pressed"]
