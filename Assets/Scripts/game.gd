@@ -1,5 +1,6 @@
 extends Node2D
 
+signal stop_xp_bar
 var new_enemy
 var respawn_time = 10.0
 
@@ -50,11 +51,14 @@ func _on_xp_bar_level_up():
 func _on_slot_1_button_pressed() -> void:
 	%Player_level_up_screen.visible = false
 	get_tree().paused = false
+	stop_xp_bar.emit()
 
 func _on_slot_1_button_2_pressed() -> void:
 	%Player_level_up_screen.visible = false
 	get_tree().paused = false
+	stop_xp_bar.emit()
 
 func _on_slot_1_button_3_pressed() -> void:
 	%Player_level_up_screen.visible = false
 	get_tree().paused = false
+	stop_xp_bar.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://u7o5xg1r857e"]
+[gd_scene load_steps=13 format=3 uid="uid://u7o5xg1r857e"]
 
 [ext_resource type="PackedScene" uid="uid://bqxqwgyntd1sv" path="res://Assets/Scenes/background.tscn" id="1_4g6ul"]
 [ext_resource type="PackedScene" uid="uid://bnvybgkcvf330" path="res://Assets/Scenes/player.tscn" id="1_8s267"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dpp5njfdf88uu" path="res://Assets/Scripts/currentscore_label.gd" id="7_dvq0e"]
 [ext_resource type="Texture2D" uid="uid://dsj64eqppq2qm" path="res://Assets/Sprites/ui/inventory.png" id="8_7ibyi"]
 [ext_resource type="Script" uid="uid://bw8ury8nihde2" path="res://Assets/Scripts/highscorelabel.gd" id="8_m4yx2"]
+[ext_resource type="AudioStream" uid="uid://bdrqumvttr6el" path="res://Assets/audio/music/Zander Noriega - Fight Them Until We Cant.mp3" id="11_g852m"]
 
 [sub_resource type="Curve2D" id="Curve2D_4g6ul"]
 _data = {
@@ -177,6 +178,12 @@ text = "RESET"
 [node name="Enemy_Spawn_Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_g852m")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="stop_xp_bar" from="." to="Label_Keep/Xp_Bar" method="_on_game_stop_xp_bar"]
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="level_up" from="Label_Keep/Xp_Bar" to="." method="_on_xp_bar_level_up"]
 [connection signal="pressed" from="Player_level_up_screen/Slot_1_button3" to="." method="_on_slot_1_button_3_pressed"]
