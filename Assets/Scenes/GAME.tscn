@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://u7o5xg1r857e"]
+[gd_scene load_steps=12 format=3 uid="uid://u7o5xg1r857e"]
 
 [ext_resource type="PackedScene" uid="uid://bqxqwgyntd1sv" path="res://Assets/Scenes/background.tscn" id="1_4g6ul"]
 [ext_resource type="PackedScene" uid="uid://bnvybgkcvf330" path="res://Assets/Scenes/player.tscn" id="1_8s267"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cycd6t7uqqui6" path="res://Assets/Sprites/ui/enemey hp bar - filling.png" id="6_dvq0e"]
 [ext_resource type="Script" uid="uid://chpbvnwpc3ux1" path="res://Assets/Scripts/xp_bar.gd" id="6_m4yx2"]
 [ext_resource type="Script" uid="uid://dpp5njfdf88uu" path="res://Assets/Scripts/currentscore_label.gd" id="7_dvq0e"]
-[ext_resource type="Texture2D" uid="uid://dsj64eqppq2qm" path="res://Assets/Sprites/ui/inventory.png" id="8_7ibyi"]
 [ext_resource type="Script" uid="uid://bw8ury8nihde2" path="res://Assets/Scripts/highscorelabel.gd" id="8_m4yx2"]
 [ext_resource type="AudioStream" uid="uid://bdrqumvttr6el" path="res://Assets/audio/music/Zander Noriega - Fight Them Until We Cant.mp3" id="11_g852m"]
 
@@ -68,51 +67,6 @@ layer = -128
 
 [node name="Background" parent="Background" instance=ExtResource("1_4g6ul")]
 z_index = -1
-
-[node name="Player_level_up_screen" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-process_mode = 3
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Player_level_up_screen"]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 0.784314)
-
-[node name="Label" type="Label" parent="Player_level_up_screen"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -78.0
-offset_top = 142.0
-offset_right = 78.0
-offset_bottom = 176.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_0whnu")
-theme_override_font_sizes/font_size = 35
-text = "LEVEL UP"
-
-[node name="Slot_1_button3" type="Button" parent="Player_level_up_screen"]
-offset_left = 665.0
-offset_top = 246.0
-offset_right = 737.0
-offset_bottom = 371.0
-icon = ExtResource("8_7ibyi")
-
-[node name="Slot_1_button2" type="Button" parent="Player_level_up_screen"]
-offset_left = 547.0
-offset_top = 248.0
-offset_right = 619.0
-offset_bottom = 373.0
-icon = ExtResource("8_7ibyi")
-
-[node name="Slot_1_button" type="Button" parent="Player_level_up_screen"]
-offset_left = 435.0
-offset_top = 248.0
-offset_right = 507.0
-offset_bottom = 373.0
-icon = ExtResource("8_7ibyi")
 
 [node name="GameOverScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -183,12 +137,8 @@ stream = ExtResource("11_g852m")
 volume_db = -15.0
 autoplay = true
 
-[connection signal="stop_xp_bar" from="." to="Label_Keep/Xp_Bar" method="_on_game_stop_xp_bar"]
 [connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
 [connection signal="level_up" from="Label_Keep/Xp_Bar" to="." method="_on_xp_bar_level_up"]
-[connection signal="pressed" from="Player_level_up_screen/Slot_1_button3" to="." method="_on_slot_1_button_3_pressed"]
-[connection signal="pressed" from="Player_level_up_screen/Slot_1_button2" to="." method="_on_slot_1_button_2_pressed"]
-[connection signal="pressed" from="Player_level_up_screen/Slot_1_button" to="." method="_on_slot_1_button_pressed"]
 [connection signal="timeout" from="GameOverScreen/Respawn_time" to="." method="_on_respawn_time_timeout"]
 [connection signal="pressed" from="GameOverScreen/Reset" to="." method="_on_reset_pressed"]
 [connection signal="timeout" from="Enemy_Spawn_Timer" to="." method="_on_enemy_spawn_timer_timeout"]

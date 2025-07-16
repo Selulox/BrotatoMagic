@@ -1,8 +1,8 @@
 extends Node2D
 
-signal stop_xp_bar
 var new_enemy
 var respawn_time = 10.0
+var level_up_screen
 
 func spawn_enemies():
 	new_enemy = preload("res://Assets/Scenes/Enemy.tscn").instantiate()
@@ -44,21 +44,8 @@ func _on_reset_pressed():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
-func _on_xp_bar_level_up():
-	%Player_level_up_screen.visible = true
+
+func _on_xp_bar_level_up() -> void:
+	level_up_screen = preload('res://Assets/Scenes/level_up_screen.tscn').instantiate()
+	add_child(level_up_screen)
 	get_tree().paused = true
-
-func _on_slot_1_button_pressed() -> void:
-	%Player_level_up_screen.visible = false
-	get_tree().paused = false
-	stop_xp_bar.emit()
-
-func _on_slot_1_button_2_pressed() -> void:
-	%Player_level_up_screen.visible = false
-	get_tree().paused = false
-	stop_xp_bar.emit()
-
-func _on_slot_1_button_3_pressed() -> void:
-	%Player_level_up_screen.visible = false
-	get_tree().paused = false
-	stop_xp_bar.emit()

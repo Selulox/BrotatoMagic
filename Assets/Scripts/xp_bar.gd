@@ -9,8 +9,3 @@ func _process(delta: float) -> void:
 		%Xp_Bar.value = 0
 		Global.player_level += 1
 		level_up.emit()
-
-
-func _on_game_stop_xp_bar() -> void:
-	queue_free()
-	
