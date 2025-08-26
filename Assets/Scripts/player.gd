@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var health = 100.0
+var level_up_screen
 signal health_depleted
 
 func _physics_process(delta: float) -> void:
@@ -17,4 +18,3 @@ func _physics_process(delta: float) -> void:
 		if health <= 0.0:
 			%pinky.play("death")
 			health_depleted.emit()
-			
