@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dsj64eqppq2qm" path="res://Assets/Sprites/ui/inventory.png" id="3_my2er"]
 
 [node name="Level_Up_Screen_Node" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_0aer2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
